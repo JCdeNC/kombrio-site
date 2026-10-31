@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kombrio · Conexões que funcionam</title>
+  <meta name="description" content="Kombrio conecta guias de turismo e estabelecimentos parceiros no Rio de Janeiro. Gratuito para guias e parceiros.">
+  <meta name="theme-color" content="#102C38">
+  <meta property="og:title" content="Kombrio · Conexões que funcionam">
+  <meta property="og:description" content="Guias recomendam, estabelecimentos acolhem, a Kombrio faz a ponte.">
+  <meta property="og:image" content="https://kombrio.com.br/icon-512.png">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Plus+Jakarta+Sans:wght@700;800&display=swap">
+  <style>
+    :root{--petrol:#102C38;--green:#00A887;--green-d:#007F65;--yellow:#F6B73C;--blue:#2761BA;--bg:#F4F7F8;--line:#D9E6E9;--muted:#5B6F78;
+      --title:"Plus Jakarta Sans",system-ui,sans-serif;--body:"DM Sans",system-ui,sans-serif}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:var(--body);color:var(--petrol);background:#fff;line-height:1.55;font-size:17px}
+    a{color:var(--blue)}
+    h1,h2,h3{font-family:var(--title);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:0 0 .5em}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+    /* en-tête */
+    header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+    .logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--petrol);font-family:var(--title);font-weight:800;font-size:1.45rem;letter-spacing:-.03em}
+    .logo img{width:34px;height:34px}
+    .logo i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--yellow);margin:-14px 0 0 -7px}
+    .nav{display:flex;align-items:center;gap:6px}
+    .nav a.lk{color:var(--petrol);text-decoration:none;font-weight:500;padding:8px 10px;border-radius:10px;font-size:.95rem}
+    .nav a.lk:hover{background:var(--bg)}
+    .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+    .lang button{border:0;background:#fff;font:600 .8rem var(--body);color:var(--muted);padding:6px 9px;cursor:pointer}
+    .lang button.on{background:var(--petrol);color:#fff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 20px;border-radius:12px;font:700 1rem var(--body);text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.pri{background:var(--green-d);color:#fff}
+    .btn.sec{background:#fff;color:var(--petrol);border-color:var(--line)}
+    .btn.yel{background:var(--yellow);color:var(--petrol)}
+    .btn.sm{min-height:38px;padding:8px 14px;font-size:.92rem}
+    /* bandeau principal */
+    .hero{background:var(--petrol);color:#fff;overflow:hidden;position:relative}
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:72px;padding-bottom:80px}
+    .hero h1{font-size:clamp(2.2rem,5vw,3.6rem);color:#fff}
+    .hero h1 em{font-style:normal;color:var(--yellow)}
+    .hero p.lead{font-size:1.2rem;color:#CFE3E0;max-width:34em}
+    .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .hero .btn.sec{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+    .badge{display:inline-block;background:rgba(0,168,135,.18);color:#7FE3CB;font-weight:700;font-size:.85rem;padding:5px 12px;border-radius:999px;margin-bottom:18px}
+    .blob{position:absolute;border-radius:48px;opacity:.95;z-index:0}
+    .hero .wrap{position:relative;z-index:1}
+    /* schéma de connexion */
+    .link-art{position:relative;height:340px}
+    .card{position:absolute;background:#fff;color:var(--petrol);border-radius:18px;padding:16px 18px;box-shadow:0 18px 40px rgba(0,0,0,.25);width:220px}
+    .card b{font-family:var(--title);display:block;font-size:1.05rem}
+    .card small{color:var(--muted);font-size:.85rem}
+    .card .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;margin-bottom:8px}
+    .c1{top:0;left:0}.c2{top:118px;right:0}.c3{bottom:0;left:30px}
+    .c1 .ic{background:#E0F5EF;color:var(--green-d)}.c2 .ic{background:#FEF3DD;color:#9A5B00}.c3 .ic{background:#E4EDFA;color:var(--blue)}
+    .link-art svg.path{position:absolute;inset:0;width:100%;height:100%}
+    /* sections */
+    section{padding:80px 0}
+    section.alt{background:var(--bg)}
+    .kicker{color:var(--green-d);font-weight:700;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
+    h2{font-size:clamp(1.8rem,3.4vw,2.5rem)}
+    .intro{color:var(--muted);font-size:1.1rem;max-width:40em;margin:0 0 36px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+    .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
+    .step .n{width:40px;height:40px;border-radius:50%;background:var(--petrol);color:#fff;font:800 1.05rem var(--title);display:grid;place-items:center;margin-bottom:14px}
+    .step h3{font-size:1.15rem}
+    .step p{margin:0;color:var(--muted)}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .list{list-style:none;padding:0;margin:0 0 28px}
+    .list li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}
+    .list li:last-child{border-bottom:0}
+    .list .ck{flex:none;width:26px;height:26px;border-radius:50%;background:#E0F5EF;color:var(--green-d);display:grid;place-items:center;margin-top:1px}
+    .panel{background:var(--petrol);color:#fff;border-radius:24px;padding:28px}
+    .panel h3{color:#fff;font-size:1.3rem}
+    .panel p{color:#CFE3E0}
+    .note{font-size:.9rem;color:var(--muted);margin-top:-12px}
+    .panel .note{color:#9DBFC0}
+    /* FAQ */
+    .faq{max-width:780px}
+    details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:4px 20px;margin-bottom:10px}
+    summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--green-d)}
+    details[open] summary::after{content:"–"}
+    details p{margin:0 0 16px;color:var(--muted)}
+    /* contact + pied */
+    .contact{background:var(--green);color:var(--petrol)}
+    .contact .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+    .contact h2{margin:0}
+    footer{background:var(--petrol);color:#9DBFC0;padding:36px 0;font-size:.92rem}
+    footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    footer a{color:#CFE3E0}
+    footer .logo{color:#fff;font-size:1.2rem}
+    .soon{opacity:.7}
+    @media(max-width:860px){
+      .hero .wrap{grid-template-columns:1fr;padding-top:48px;padding-bottom:56px}
+      .link-art{height:300px;max-width:380px}
+      .steps,.two{grid-template-columns:1fr}
+      .nav a.lk{display:none}
+      section{padding:56px 0}
+    }
+    @media(max-width:560px){
+      .wrap{padding:0 16px}
+      .bar{gap:8px}
+      .logo{font-size:1.25rem}.logo img{width:30px;height:30px}
+      .nav{gap:6px}
+      .btn.sm{padding:8px 11px;font-size:.85rem;white-space:nowrap}
+      .lang button{padding:6px 7px}
+      .link-art{height:auto;display:flex;flex-direction:column;gap:12px;max-width:none}
+      .link-art svg.path{display:none}
+      .card{position:static;width:auto;display:grid;grid-template-columns:40px 1fr;column-gap:12px;align-items:center;padding:12px 14px}
+      .card .ic{grid-row:span 2;margin:0}
+      .c2{margin-left:24px}.c3{margin-left:48px}
+      .hero .cta .btn{flex:1 1 100%}
+      .blob{transform:scale(.45);transform-origin:top right;opacity:.6}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top"><img src="icon.svg" alt="">kombrio<i></i></a>
+    <nav class="nav">
+      <a class="lk" href="#como" data-t="nav.how">Como funciona</a>
+      <a class="lk" href="#guias" data-t="nav.guides">Guias</a>
+      <a class="lk" href="#parceiros" data-t="nav.partners">Estabelecimentos</a>
+      <div class="lang" role="group" aria-label="Idioma"><button data-l="pt">PT</button><button data-l="en">EN</button><button data-l="fr">FR</button></div>
+      <a class="btn pri sm" href="https://app.kombrio.com.br/" data-t="nav.app">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="blob" style="width:260px;height:260px;background:var(--green);right:-80px;top:-90px"></div>
+    <div class="blob" style="width:140px;height:140px;background:var(--yellow);right:120px;bottom:-60px;border-radius:36px"></div>
+    <div class="wrap">
+      <div>
+        <span class="badge" data-t="hero.badge">Rio de Janeiro · gratuito para guias e parceiros</span>
+        <h1 data-t="hero.title" data-html>Conexões que <em>funcionam</em>.</h1>
+        <p class="lead" data-t="hero.lead">Guias de turismo recomendam, restaurantes e lojas acolhem. A Kombrio registra cada visita e torna o agradecimento simples e transparente.</p>
+        <div class="cta">
+          <a class="btn yel" href="#guias" data-t="hero.guide">Sou guia</a>
+          <a class="btn sec" href="#parceiros" data-t="hero.partner">Tenho um estabelecimento</a>
+        </div>
+      </div>
+      <div class="link-art" aria-hidden="true">
+        <svg class="path" viewBox="0 0 400 340" preserveAspectRatio="none"><path d="M120 70 C 260 70, 300 120, 300 160 M 290 210 C 280 280, 200 290, 150 280" fill="none" stroke="#00A887" stroke-width="3" stroke-dasharray="6 8" stroke-linecap="round"/></svg>
+        <div class="card c1"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a7 7 0 0 1 16 0v1"/></svg></div><b data-t="art.g">Guia</b><small data-t="art.gs">recomenda e envia o QR</small></div>
+        <div class="card c2"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg></div><b data-t="art.c">Cliente</b><small data-t="art.cs">mostra o QR na visita</small></div>
+        <div class="card c3"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/></svg></div><b data-t="art.p">Estabelecimento</b><small data-t="art.ps">registra a visita na hora</small></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="como">
+    <div class="wrap">
+      <div class="kicker" data-t="how.k">Como funciona</div>
+      <h2 data-t="how.t">Três passos, sem complicação</h2>
+      <p class="intro" data-t="how.i">Nada para instalar nas lojas de aplicativos: tudo funciona pelo navegador do celular, e cada pessoa vê só o que lhe diz respeito.</p>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3 data-t="how.1t">O guia recomenda</h3><p data-t="how.1p">Ele cadastra o cliente ou o grupo e envia um QR pessoal pelo WhatsApp, válido durante a estadia.</p></div>
+        <div class="step"><div class="n">2</div><h3 data-t="how.2t">O cliente visita</h3><p data-t="how.2p">No restaurante ou na loja, ele mostra o QR. A equipe escaneia com o celular do caixa: a visita fica registrada, com a oferta do parceiro, se houver.</p></div>
+        <div class="step"><div class="n">3</div><h3 data-t="how.3t">Todos acompanham</h3><p data-t="how.3p">O parceiro vê suas visitas e relatórios; o guia acompanha as recomendações e, quando o parceiro declara uma comissão, o valor que lhe cabe.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guias" class="alt">
+    <div class="wrap two">
+      <div>
+        <div class="kicker" data-t="g.k">Para guias</div>
+        <h2 data-t="g.t">Suas recomendações têm valor</h2>
+        <p class="intro" data-t="g.i">Você indica bons lugares aos seus clientes. A Kombrio registra cada visita, mesmo quando você não está presente.</p>
+        <ul class="list">
+          <li><span class="ck">✓</span><span data-t="g.1">Cadastro gratuito, com validação do seu registro Cadastur.</span></li>
+          <li><span class="ck">✓</span><span data-t="g.2">Um QR por cliente ou grupo, enviado pelo WhatsApp em segundos.</span></li>
+          <li><span class="ck">✓</span><span data-t="g.3">Acompanhe as visitas dos seus clientes nos parceiros.</span></li>
+          <li><span class="ck">✓</span><span data-t="g.4">Extrato claro: o que foi declarado, o que foi recebido e o que é seu.</span></li>
+        </ul>
+        <p class="note" data-t="g.note">As comissões são voluntárias: cada parceiro decide se e quanto agradece. Você recebe a sua parte apenas do que a Kombrio efetivamente recebe.</p>
+      </div>
+      <div class="panel">
+        <h3 data-t="g.pt">Pronto para começar?</h3>
+        <p data-t="g.pp">Crie sua conta de guia em poucos minutos. A Kombrio verifica seu cadastro e ativa seu acesso.</p>
+        <a class="btn yel" href="https://app.kombrio.com.br/guide/" data-t="g.cta">Ser guia Kombrio</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="parceiros">
+    <div class="wrap two">
+      <div>
+        <div class="kicker" data-t="p.k">Para restaurantes e lojas</div>
+        <h2 data-t="p.t">Novos clientes, recomendados por quem conhece o Rio</h2>
+        <p class="intro" data-t="p.i">Guias verificados enviam turistas até você. Você recebe, registra a visita e decide livremente como agradecer.</p>
+        <ul class="list">
+          <li><span class="ck">✓</span><span data-t="p.1">Adesão gratuita: sem mensalidade, sem taxa de inscrição.</span></li>
+          <li><span class="ck">✓</span><span data-t="p.2">Um QR fixo no caixa: qualquer celular da equipe registra a visita.</span></li>
+          <li><span class="ck">✓</span><span data-t="p.3">Comissão livre, sem valor mínimo, paga por Pix quando você quiser, de uma vez.</span></li>
+          <li><span class="ck">✓</span><span data-t="p.4">Oferta opcional para os clientes Kombrio, definida por você.</span></li>
+          <li><span class="ck">✓</span><span data-t="p.5">Relatório mensal em Excel ou PDF, com acesso somente leitura para o seu contador.</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3 data-t="p.pt">Já recebeu um código da Kombrio?</h3>
+        <p data-t="p.pp">Use-o no primeiro acesso para criar o espaço do gerente. Ainda não tem? Fale com a gente.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <a class="btn yel" href="https://app.kombrio.com.br/partner/#/ativar" data-t="p.cta">Primeiro acesso</a>
+          <a class="btn sec" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.35)" href="#contato" data-t="p.cta2">Quero ser parceiro</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="kicker" data-t="f.k">Perguntas frequentes</div>
+      <h2 data-t="f.t">Dúvidas comuns</h2>
+      <div class="faq">
+        <details><summary data-t="f.1q">Quanto custa?</summary><p data-t="f.1a">Nada. O cadastro é gratuito para guias e para estabelecimentos, sem mensalidade.</p></details>
+        <details><summary data-t="f.2q">A comissão é obrigatória?</summary><p data-t="f.2a">Não. Cada estabelecimento decide livremente se declara uma comissão e qual o valor. Uma visita registrada não gera, por si só, obrigação de pagamento.</p></details>
+        <details><summary data-t="f.3q">E se o guia não estiver junto na visita?</summary><p data-t="f.3a">Não faz diferença: o QR do cliente identifica o guia que fez a recomendação.</p></details>
+        <details><summary data-t="f.4q">Preciso instalar um aplicativo?</summary><p data-t="f.4a">Não. Tudo funciona no navegador do celular ou do computador. Se quiser, é só adicionar o atalho à tela inicial.</p></details>
+        <details><summary data-t="f.5q">O que o cliente vê?</summary><p data-t="f.5a">Seu QR, o guia que o recomendou e os estabelecimentos parceiros com suas ofertas, no idioma do celular (português, inglês, francês ou espanhol).</p></details>
+        <details><summary data-t="f.6q">E os meus dados?</summary><p data-t="f.6a">A Kombrio guarda apenas o necessário para o serviço, conforme a LGPD, e não vende nem cede dados a terceiros.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <div class="wrap">
+      <div><h2 data-t="c.t">Vamos conversar?</h2><p style="margin:.4em 0 0" data-t="c.p">Guia ou estabelecimento no Rio: fale com a equipe Kombrio.</p></div>
+      <a class="btn pri" style="background:var(--petrol)" href="#" id="wa" data-t="c.cta">Falar pelo WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top"><img src="icon.svg" alt="" style="width:28px;height:28px">kombrio<i></i></a>
+    <div><span data-t="ft.priv" class="soon">Política de privacidade (em breve)</span> · <span data-t="ft.terms" class="soon">Termos de uso (em breve)</span></div>
+    <div>© 2026 Kombrio · Rio de Janeiro</div>
+  </div>
+</footer>
+
+<script>
+  // Numéro WhatsApp de contact : à renseigner (format international, chiffres seulement, ex. 5521999999999).
+  const WHATSAPP = '';
+  const T = {
+    en: {
+      'nav.how':'How it works','nav.guides':'Guides','nav.partners':'Businesses','nav.app':'Sign in',
+      'hero.badge':'Rio de Janeiro · free for guides and partners','hero.title':'Connections that <em>work</em>.',
+      'hero.lead':'Tour guides recommend, restaurants and shops welcome. Kombrio records every visit and makes saying thank you simple and transparent.',
+      'hero.guide':'I am a guide','hero.partner':'I run a business',
+      'art.g':'Guide','art.gs':'recommends and sends the QR','art.c':'Client','art.cs':'shows the QR on the visit','art.p':'Business','art.ps':'records the visit on the spot',
+      'how.k':'How it works','how.t':'Three steps, no hassle','how.i':'Nothing to install from app stores: everything runs in the phone browser, and everyone sees only what concerns them.',
+      'how.1t':'The guide recommends','how.1p':'They register the client or group and send a personal QR by WhatsApp, valid for the whole stay.',
+      'how.2t':'The client visits','how.2p':'At the restaurant or shop, they show the QR. The team scans it with the counter phone: the visit is recorded, with the partner’s offer if there is one.',
+      'how.3t':'Everyone follows','how.3p':'The partner sees its visits and reports; the guide follows the recommendations and, when the partner declares a commission, their share.',
+      'g.k':'For guides','g.t':'Your recommendations have value','g.i':'You point your clients to good places. Kombrio records every visit, even when you are not there.',
+      'g.1':'Free sign-up, with verification of your Cadastur registration.','g.2':'One QR per client or group, sent by WhatsApp in seconds.','g.3':'Follow your clients’ visits at the partners.','g.4':'A clear statement: what was declared, what was received and what is yours.',
+      'g.note':'Commissions are voluntary: each partner decides whether and how much to give. You receive your share only of what Kombrio actually receives.',
+      'g.pt':'Ready to start?','g.pp':'Create your guide account in a few minutes. Kombrio checks your registration and activates your access.','g.cta':'Become a Kombrio guide',
+      'p.k':'For restaurants and shops','p.t':'New customers, recommended by people who know Rio','p.i':'Verified guides send tourists your way. You welcome them, record the visit and freely decide how to say thank you.',
+      'p.1':'Free to join: no monthly fee, no sign-up fee.','p.2':'One fixed QR at the counter: any team phone records the visit.','p.3':'Free commission, no minimum, paid by Pix whenever you want, in one go.','p.4':'Optional offer for Kombrio clients, set by you.','p.5':'Monthly report in Excel or PDF, with read-only access for your accountant.',
+      'p.pt':'Already received a Kombrio code?','p.pp':'Use it on first access to create the manager space. Don’t have one yet? Get in touch.','p.cta':'First access','p.cta2':'Become a partner',
+      'f.k':'FAQ','f.t':'Common questions','f.1q':'How much does it cost?','f.1a':'Nothing. Sign-up is free for guides and businesses, with no monthly fee.',
+      'f.2q':'Is the commission mandatory?','f.2a':'No. Each business freely decides whether to declare a commission and how much. A recorded visit does not, by itself, create any obligation to pay.',
+      'f.3q':'What if the guide is not with the client?','f.3a':'It makes no difference: the client’s QR identifies the guide who made the recommendation.',
+      'f.4q':'Do I need to install an app?','f.4a':'No. Everything works in the browser on a phone or computer. You can add a shortcut to your home screen if you like.',
+      'f.5q':'What does the client see?','f.5a':'Their QR, the guide who recommended them and the partner businesses with their offers, in the phone’s language (Portuguese, English, French or Spanish).',
+      'f.6q':'What about my data?','f.6a':'Kombrio keeps only what the service needs, in line with Brazil’s LGPD, and never sells or shares data with third parties.',
+      'c.t':'Let’s talk','c.p':'Guide or business in Rio: get in touch with the Kombrio team.','c.cta':'Chat on WhatsApp',
+      'ft.priv':'Privacy policy (coming soon)','ft.terms':'Terms of use (coming soon)'
+    },
+    fr: {
+      'nav.how':'Comment ça marche','nav.guides':'Guides','nav.partners':'Établissements','nav.app':'Se connecter',
+      'hero.badge':'Rio de Janeiro · gratuit pour les guides et les partenaires','hero.title':'Des liens qui <em>fonctionnent</em>.',
+      'hero.lead':'Les guides recommandent, les restaurants et boutiques accueillent. Kombrio enregistre chaque visite et rend le remerciement simple et transparent.',
+      'hero.guide':'Je suis guide','hero.partner':'J’ai un établissement',
+      'art.g':'Guide','art.gs':'recommande et envoie le QR','art.c':'Client','art.cs':'montre le QR à la visite','art.p':'Établissement','art.ps':'enregistre la visite sur place',
+      'how.k':'Comment ça marche','how.t':'Trois étapes, sans complication','how.i':'Rien à installer depuis les stores : tout fonctionne dans le navigateur du téléphone, et chacun ne voit que ce qui le concerne.',
+      'how.1t':'Le guide recommande','how.1p':'Il enregistre le client ou le groupe et envoie un QR personnel par WhatsApp, valable pendant tout le séjour.',
+      'how.2t':'Le client passe','how.2p':'Au restaurant ou en boutique, il montre son QR. L’équipe le scanne avec le téléphone de la caisse : la visite est enregistrée, avec l’offre du partenaire s’il en propose une.',
+      'how.3t':'Chacun suit','how.3p':'Le partenaire voit ses visites et ses relevés ; le guide suit ses recommandations et, quand le partenaire déclare une commission, la part qui lui revient.',
+      'g.k':'Pour les guides','g.t':'Vos recommandations ont de la valeur','g.i':'Vous conseillez de bonnes adresses à vos clients. Kombrio enregistre chaque visite, même quand vous n’êtes pas là.',
+      'g.1':'Inscription gratuite, avec vérification de votre numéro Cadastur.','g.2':'Un QR par client ou groupe, envoyé par WhatsApp en quelques secondes.','g.3':'Suivez les visites de vos clients chez les partenaires.','g.4':'Un relevé clair : ce qui est déclaré, ce qui est reçu et ce qui vous revient.',
+      'g.note':'Les commissions sont volontaires : chaque partenaire décide s’il remercie et combien. Vous recevez votre part uniquement sur ce que Kombrio a réellement encaissé.',
+      'g.pt':'Prêt à commencer ?','g.pp':'Créez votre compte guide en quelques minutes. Kombrio vérifie votre inscription et active votre accès.','g.cta':'Devenir guide Kombrio',
+      'p.k':'Pour les restaurants et boutiques','p.t':'De nouveaux clients, recommandés par ceux qui connaissent Rio','p.i':'Des guides vérifiés vous envoient des touristes. Vous les accueillez, enregistrez la visite et décidez librement de votre remerciement.',
+      'p.1':'Adhésion gratuite : sans abonnement, sans frais d’inscription.','p.2':'Un QR fixe à la caisse : n’importe quel téléphone de l’équipe enregistre la visite.','p.3':'Commission libre, sans minimum, payée par Pix quand vous voulez, en une fois.','p.4':'Offre facultative pour les clients Kombrio, définie par vous.','p.5':'Relevé mensuel en Excel ou PDF, avec un accès en lecture seule pour votre comptable.',
+      'p.pt':'Vous avez reçu un code Kombrio ?','p.pp':'Utilisez-le au premier accès pour créer l’espace du gérant. Pas encore de code ? Contactez-nous.','p.cta':'Premier accès','p.cta2':'Devenir partenaire',
+      'f.k':'Questions fréquentes','f.t':'Les questions qu’on nous pose','f.1q':'Combien ça coûte ?','f.1a':'Rien. L’inscription est gratuite pour les guides et les établissements, sans abonnement.',
+      'f.2q':'La commission est-elle obligatoire ?','f.2a':'Non. Chaque établissement décide librement s’il déclare une commission et de son montant. Une visite enregistrée ne crée, à elle seule, aucune obligation de payer.',
+      'f.3q':'Et si le guide n’accompagne pas le client ?','f.3a':'Ça ne change rien : le QR du client identifie le guide qui l’a recommandé.',
+      'f.4q':'Faut-il installer une application ?','f.4a':'Non. Tout fonctionne dans le navigateur, sur téléphone ou ordinateur. Vous pouvez ajouter un raccourci sur l’écran d’accueil.',
+      'f.5q':'Que voit le client ?','f.5a':'Son QR, le guide qui l’a recommandé et les établissements partenaires avec leurs offres, dans la langue de son téléphone (portugais, anglais, français ou espagnol).',
+      'f.6q':'Et mes données ?','f.6a':'Kombrio ne garde que ce qui est nécessaire au service, conformément à la LGPD, et ne vend ni ne cède aucune donnée.',
+      'c.t':'On en parle ?','c.p':'Guide ou établissement à Rio : contactez l’équipe Kombrio.','c.cta':'Écrire sur WhatsApp',
+      'ft.priv':'Politique de confidentialité (bientôt)','ft.terms':'Conditions d’utilisation (bientôt)'
+    }
+  };
+  const PT = {};
+  document.querySelectorAll('[data-t]').forEach(el => { PT[el.dataset.t] = el.hasAttribute('data-html') ? el.innerHTML : el.textContent; });
+  T.pt = PT;
+  function setLang(l) {
+    const d = T[l] || T.pt;
+    document.querySelectorAll('[data-t]').forEach(el => {
+      const v = d[el.dataset.t] ?? PT[el.dataset.t];
+      if (el.hasAttribute('data-html')) el.innerHTML = v; else el.textContent = v;
+    });
+    document.documentElement.lang = l;
+    document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.l === l));
+    try { localStorage.setItem('kombrio-site-lang', l); } catch (e) { /* rien */ }
+  }
+  document.querySelectorAll('.lang button').forEach(b => b.onclick = () => setLang(b.dataset.l));
+  let start = 'pt';
+  try { start = localStorage.getItem('kombrio-site-lang') || ''; } catch (e) { start = ''; }
+  if (!start) { const n = (navigator.language || 'pt').slice(0, 2); start = T[n] ? n : (n === 'es' ? 'pt' : 'en'); }
+  setLang(start);
+  const wa = document.getElementById('wa');
+  if (WHATSAPP) wa.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Olá! Quero saber mais sobre a Kombrio.');
+  else wa.addEventListener('click', e => { e.preventDefault(); alert('Numéro WhatsApp à définir.'); });
+</script>
+</body>
+</html>
