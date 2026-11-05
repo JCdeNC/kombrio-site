@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baixar o app · Kombrio</title>
+  <meta name="description" content="Instale o aplicativo Kombrio Guia ou Parceiro na tela inicial do seu celular, Android ou iPhone.">
+  <meta name="theme-color" content="#102C38">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Plus+Jakarta+Sans:wght@700;800&display=swap">
+  <style>
+    :root{--petrol:#102C38;--green:#00A887;--green-d:#007F65;--yellow:#F6B73C;--blue:#2761BA;--bg:#F4F7F8;--line:#D9E6E9;--muted:#5B6F78;
+      --title:"Plus Jakarta Sans",system-ui,sans-serif;--body:"DM Sans",system-ui,sans-serif}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:var(--body);color:var(--petrol);background:#fff;line-height:1.55;font-size:17px}
+    a{color:var(--blue)}
+    h1,h2,h3{font-family:var(--title);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:0 0 .5em}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+    /* en-tête */
+    header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+    .logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--petrol);font-family:var(--title);font-weight:800;font-size:1.45rem;letter-spacing:-.03em}
+    .logo img{width:34px;height:34px}
+    .logo i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--yellow);margin:-14px 0 0 -7px}
+    .nav{display:flex;align-items:center;gap:6px}
+    .nav a.lk{color:var(--petrol);text-decoration:none;font-weight:500;padding:8px 10px;border-radius:10px;font-size:.95rem}
+    .nav a.lk:hover{background:var(--bg)}
+    .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+    .lang button{border:0;background:#fff;font:600 .8rem var(--body);color:var(--muted);padding:6px 9px;cursor:pointer}
+    .lang button.on{background:var(--petrol);color:#fff}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:12px 20px;border-radius:12px;font:700 1rem var(--body);text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .15s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.pri{background:var(--green-d);color:#fff}
+    .btn.sec{background:#fff;color:var(--petrol);border-color:var(--line)}
+    .btn.yel{background:var(--yellow);color:var(--petrol)}
+    .btn.sm{min-height:38px;padding:8px 14px;font-size:.92rem}
+    /* bandeau principal */
+    .hero{background:var(--petrol);color:#fff;overflow:hidden;position:relative}
+    .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:72px;padding-bottom:80px}
+    .hero h1{font-size:clamp(2.2rem,5vw,3.6rem);color:#fff}
+    .hero h1 em{font-style:normal;color:var(--yellow)}
+    .hero p.lead{font-size:1.2rem;color:#CFE3E0;max-width:34em}
+    .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .hero .btn.sec{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+    .badge{display:inline-block;background:rgba(0,168,135,.18);color:#7FE3CB;font-weight:700;font-size:.85rem;padding:5px 12px;border-radius:999px;margin-bottom:18px}
+    .blob{position:absolute;border-radius:48px;opacity:.95;z-index:0}
+    .hero .wrap{position:relative;z-index:1}
+    /* schéma de connexion */
+    .link-art{position:relative;height:340px}
+    .card{position:absolute;background:#fff;color:var(--petrol);border-radius:18px;padding:16px 18px;box-shadow:0 18px 40px rgba(0,0,0,.25);width:220px}
+    .card b{font-family:var(--title);display:block;font-size:1.05rem}
+    .card small{color:var(--muted);font-size:.85rem}
+    .card .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;margin-bottom:8px}
+    .c1{top:0;left:0}.c2{top:118px;right:0}.c3{bottom:0;left:30px}
+    .c1 .ic{background:#E0F5EF;color:var(--green-d)}.c2 .ic{background:#FEF3DD;color:#9A5B00}.c3 .ic{background:#E4EDFA;color:var(--blue)}
+    .link-art svg.path{position:absolute;inset:0;width:100%;height:100%}
+    /* sections */
+    section{padding:80px 0}
+    section.alt{background:var(--bg)}
+    .kicker{color:var(--green-d);font-weight:700;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
+    h2{font-size:clamp(1.8rem,3.4vw,2.5rem)}
+    .intro{color:var(--muted);font-size:1.1rem;max-width:40em;margin:0 0 36px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+    .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
+    .step .n{width:40px;height:40px;border-radius:50%;background:var(--petrol);color:#fff;font:800 1.05rem var(--title);display:grid;place-items:center;margin-bottom:14px}
+    .step h3{font-size:1.15rem}
+    .step p{margin:0;color:var(--muted)}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .list{list-style:none;padding:0;margin:0 0 28px}
+    .list li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}
+    .list li:last-child{border-bottom:0}
+    .list .ck{flex:none;width:26px;height:26px;border-radius:50%;background:#E0F5EF;color:var(--green-d);display:grid;place-items:center;margin-top:1px}
+    .panel{background:var(--petrol);color:#fff;border-radius:24px;padding:28px}
+    .panel h3{color:#fff;font-size:1.3rem}
+    .panel p{color:#CFE3E0}
+    .note{font-size:.9rem;color:var(--muted);margin-top:-12px}
+    .panel .note{color:#9DBFC0}
+    /* FAQ */
+    .faq{max-width:780px}
+    details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:4px 20px;margin-bottom:10px}
+    summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--green-d)}
+    details[open] summary::after{content:"–"}
+    details p{margin:0 0 16px;color:var(--muted)}
+    /* contact + pied */
+    .contact{background:var(--green);color:var(--petrol)}
+    .contact .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+    .contact h2{margin:0}
+    footer{background:var(--petrol);color:#9DBFC0;padding:36px 0;font-size:.92rem}
+    footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    footer a{color:#CFE3E0}
+    footer .logo{color:#fff;font-size:1.2rem}
+    .soon{opacity:.7}
+    @media(max-width:860px){
+      .hero .wrap{grid-template-columns:1fr;padding-top:48px;padding-bottom:56px}
+      .link-art{height:300px;max-width:380px}
+      .steps,.two{grid-template-columns:1fr}
+      .nav a.lk{display:none}
+      section{padding:56px 0}
+    }
+    @media(max-width:560px){
+      .wrap{padding:0 16px}
+      .bar{gap:8px}
+      .logo{font-size:1.25rem}.logo img{width:30px;height:30px}
+      .nav{gap:6px}
+      .btn.sm{padding:8px 11px;font-size:.85rem;white-space:nowrap}
+      .lang button{padding:6px 7px}
+      .link-art{height:auto;display:flex;flex-direction:column;gap:12px;max-width:none}
+      .link-art svg.path{display:none}
+      .card{position:static;width:auto;display:grid;grid-template-columns:40px 1fr;column-gap:12px;align-items:center;padding:12px 14px}
+      .card .ic{grid-row:span 2;margin:0}
+      .c2{margin-left:24px}.c3{margin-left:48px}
+      .hero .cta .btn{flex:1 1 100%}
+      .blob{transform:scale(.45);transform-origin:top right;opacity:.6}
+    }
+  </style>
+  <style>
+    .apps{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+    .app{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+    .app h3{display:flex;align-items:center;gap:10px;font-size:1.3rem}
+    .app h3 img{width:36px;height:36px}
+    .app p{color:var(--muted);margin:0 0 18px}
+    .os{display:flex;gap:6px;margin:0 0 18px}
+    .os button{flex:1;border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px;font:700 .95rem var(--body);color:var(--muted);cursor:pointer}
+    .os button.on{background:var(--petrol);color:#fff;border-color:var(--petrol)}
+    ol.how{margin:0 0 6px;padding-left:22px}
+    ol.how li{margin:0 0 10px}
+    .tip{background:var(--bg);border-radius:14px;padding:14px 16px;font-size:.95rem;color:var(--muted);margin-top:28px}
+    @media(max-width:860px){.apps{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="./"><img src="icon.svg" alt="">kombrio<i></i></a>
+    <nav class="nav">
+      <div class="lang" role="group" aria-label="Idioma"><button data-l="pt">PT</button><button data-l="en">EN</button><button data-l="fr">FR</button></div>
+      <a class="btn pri sm" href="https://app.kombrio.com.br/" data-t="nav.app">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <div class="kicker" data-t="k">Aplicativo</div>
+    <h1 style="font-size:clamp(2rem,4.4vw,3rem)" data-t="t">Baixar o app Kombrio</h1>
+    <p class="intro" data-t="i">Não precisa passar pela loja de aplicativos: a Kombrio funciona no navegador e fica na tela inicial do celular, como qualquer app. Leva 30 segundos.</p>
+
+    <div class="os" role="group" aria-label="Celular" style="max-width:420px">
+      <button data-os="android">Android</button><button data-os="ios">iPhone</button>
+    </div>
+
+    <div class="apps">
+      <div class="app">
+        <h3><img src="icon.svg" alt=""><span data-t="g.t">Kombrio Guia</span></h3>
+        <p data-t="g.p">Para guias de turismo: crie os QR dos seus clientes e acompanhe suas comissões.</p>
+        <ol class="how" data-os-steps></ol>
+        <a class="btn yel" style="width:100%;margin-top:8px" href="https://app.kombrio.com.br/guide/" data-t="g.cta">Abrir o app Guia</a>
+      </div>
+      <div class="app">
+        <h3><img src="icon.svg" alt=""><span data-t="p.t">Kombrio Parceiro</span></h3>
+        <p data-t="p.p">Para restaurantes e lojas: registre as visitas e acompanhe seus relatórios.</p>
+        <ol class="how" data-os-steps></ol>
+        <a class="btn pri" style="width:100%;margin-top:8px" href="https://app.kombrio.com.br/partner/" data-t="p.cta">Abrir o app Parceiro</a>
+      </div>
+    </div>
+
+    <p class="tip" data-t="tip">Os clientes não precisam instalar nada: eles recebem o QR do guia pelo WhatsApp e podem colocá-lo na tela inicial com um toque.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="./"><img src="icon.svg" alt="" style="width:28px;height:28px">kombrio<i></i></a>
+    <div><a href="./" data-t="ft.home">Página inicial</a></div>
+    <div>© 2026 Kombrio · Rio de Janeiro</div>
+  </div>
+</footer>
+
+<script>
+  const T = {
+    pt: {
+      'nav.app':'Entrar','k':'Aplicativo','t':'Baixar o app Kombrio',
+      'i':'Não precisa passar pela loja de aplicativos: a Kombrio funciona no navegador e fica na tela inicial do celular, como qualquer app. Leva 30 segundos.',
+      'g.t':'Kombrio Guia','g.p':'Para guias de turismo: crie os QR dos seus clientes e acompanhe suas comissões.','g.cta':'Abrir o app Guia',
+      'p.t':'Kombrio Parceiro','p.p':'Para restaurantes e lojas: registre as visitas e acompanhe seus relatórios.','p.cta':'Abrir o app Parceiro',
+      'tip':'Os clientes não precisam instalar nada: eles recebem o QR do guia pelo WhatsApp e podem colocá-lo na tela inicial com um toque.','ft.home':'Página inicial',
+      android:['Toque em <b>Abrir o app</b> abaixo, no <b>Chrome</b>.','Toque no menu <b>⋮</b> (canto superior direito).','Escolha <b>Instalar app</b> ou <b>Adicionar à tela inicial</b>.'],
+      ios:['Toque em <b>Abrir o app</b> abaixo, no <b>Safari</b>.','Toque em <b>Compartilhar</b> (o quadrado com a seta; às vezes no menu <b>⋯</b>).','Escolha <b>Adicionar à Tela de Início</b>.']
+    },
+    en: {
+      'nav.app':'Sign in','k':'App','t':'Get the Kombrio app',
+      'i':'No app store needed: Kombrio runs in the browser and sits on your home screen like any other app. It takes 30 seconds.',
+      'g.t':'Kombrio Guide','g.p':'For tour guides: create your clients’ QR codes and follow your commissions.','g.cta':'Open the Guide app',
+      'p.t':'Kombrio Partner','p.p':'For restaurants and shops: record visits and follow your reports.','p.cta':'Open the Partner app',
+      'tip':'Clients don’t need to install anything: they get the guide’s QR on WhatsApp and can add it to their home screen in one tap.','ft.home':'Home page',
+      android:['Tap <b>Open the app</b> below, in <b>Chrome</b>.','Tap the <b>⋮</b> menu (top right).','Choose <b>Install app</b> or <b>Add to Home screen</b>.'],
+      ios:['Tap <b>Open the app</b> below, in <b>Safari</b>.','Tap <b>Share</b> (the square with an arrow; sometimes in the <b>⋯</b> menu).','Choose <b>Add to Home Screen</b>.']
+    },
+    fr: {
+      'nav.app':'Se connecter','k':'Application','t':'Installer l’app Kombrio',
+      'i':'Pas besoin de passer par un store : Kombrio fonctionne dans le navigateur et se place sur l’écran d’accueil comme n’importe quelle app. Ça prend 30 secondes.',
+      'g.t':'Kombrio Guide','g.p':'Pour les guides : créez les QR de vos clients et suivez vos commissions.','g.cta':'Ouvrir l’app Guide',
+      'p.t':'Kombrio Partenaire','p.p':'Pour les restaurants et boutiques : enregistrez les visites et suivez vos relevés.','p.cta':'Ouvrir l’app Partenaire',
+      'tip':'Les clients n’ont rien à installer : ils reçoivent le QR du guide par WhatsApp et peuvent le mettre sur leur écran d’accueil en un geste.','ft.home':'Accueil',
+      android:['Touchez <b>Ouvrir l’app</b> ci-dessous, dans <b>Chrome</b>.','Touchez le menu <b>⋮</b> (en haut à droite).','Choisissez <b>Installer l’application</b> ou <b>Ajouter à l’écran d’accueil</b>.'],
+      ios:['Touchez <b>Ouvrir l’app</b> ci-dessous, dans <b>Safari</b>.','Touchez <b>Partager</b> (le carré avec une flèche ; parfois dans le menu <b>⋯</b>).','Choisissez <b>Sur l’écran d’accueil</b>.']
+    }
+  };
+  let lang = 'pt';
+  let os = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) ? 'ios' : 'android';
+  function render() {
+    const d = T[lang];
+    document.querySelectorAll('[data-t]').forEach(el => { el.textContent = d[el.dataset.t]; });
+    document.querySelectorAll('[data-os-steps]').forEach(ol => { ol.innerHTML = d[os].map(s => '<li>' + s + '</li>').join(''); });
+    document.querySelectorAll('[data-os]').forEach(b => b.classList.toggle('on', b.dataset.os === os));
+    document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.l === lang));
+    document.documentElement.lang = lang;
+  }
+  document.querySelectorAll('[data-os]').forEach(b => b.onclick = () => { os = b.dataset.os; render(); });
+  document.querySelectorAll('.lang button').forEach(b => b.onclick = () => { lang = b.dataset.l; try { localStorage.setItem('kombrio-site-lang', lang); } catch (e) {} render(); });
+  try { lang = localStorage.getItem('kombrio-site-lang') || ''; } catch (e) { lang = ''; }
+  if (!T[lang]) { const n = (navigator.language || 'pt').slice(0, 2); lang = T[n] ? n : (n === 'es' ? 'pt' : 'en'); }
+  render();
+</script>
+</body>
+</html>
