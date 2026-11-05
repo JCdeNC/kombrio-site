@@ -53,14 +53,16 @@
     .blob{position:absolute;border-radius:48px;opacity:.95;z-index:0}
     .hero .wrap{position:relative;z-index:1}
     /* schéma de connexion */
-    .link-art{position:relative;height:340px}
-    .card{position:absolute;background:#fff;color:var(--petrol);border-radius:18px;padding:16px 18px;box-shadow:0 18px 40px rgba(0,0,0,.25);width:220px}
-    .card b{font-family:var(--title);display:block;font-size:1.05rem}
-    .card small{color:var(--muted);font-size:.85rem}
-    .card .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;margin-bottom:8px}
-    .c1{top:0;left:0}.c2{top:118px;right:0}.c3{bottom:0;left:30px}
+    .link-art{display:flex;flex-direction:column;gap:26px;max-width:440px;margin-left:auto}
+    .card{position:relative;background:#fff;color:var(--petrol);border-radius:18px;padding:16px 18px;box-shadow:0 18px 40px rgba(0,0,0,.25);width:min(100%,300px);display:grid;grid-template-columns:44px 1fr;column-gap:14px;align-items:center}
+    .card b{font-family:var(--title);display:block;font-size:1.1rem;line-height:1.25}
+    .card small{color:var(--muted);font-size:.92rem;line-height:1.35}
+    .card .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;grid-row:span 2}
+    .c1{align-self:flex-start}.c2{align-self:center}.c3{align-self:flex-end}
     .c1 .ic{background:#E0F5EF;color:var(--green-d)}.c2 .ic{background:#FEF3DD;color:#9A5B00}.c3 .ic{background:#E4EDFA;color:var(--blue)}
-    .link-art svg.path{position:absolute;inset:0;width:100%;height:100%}
+    /* fil pointillé entre les cartes */
+    .card+.card::before{content:"";position:absolute;top:-26px;left:50%;height:26px;border-left:3px dashed var(--green)}
+    .link-art svg.path{display:none}
     /* sections */
     section{padding:80px 0}
     section.alt{background:var(--bg)}
@@ -101,7 +103,7 @@
     .soon{opacity:.7}
     @media(max-width:860px){
       .hero .wrap{grid-template-columns:1fr;padding-top:48px;padding-bottom:56px}
-      .link-art{height:300px;max-width:380px}
+      .link-art{margin:0;max-width:440px}
       .steps,.two{grid-template-columns:1fr}
       .nav a.lk{display:none}
       section{padding:56px 0}
@@ -113,12 +115,9 @@
       .nav{gap:6px}
       .btn.sm{padding:8px 11px;font-size:.85rem;white-space:nowrap}
       .lang button{padding:6px 7px}
-      .link-art{height:auto;display:flex;flex-direction:column;gap:12px;max-width:none}
-      .link-art svg.path{display:none}
-      .card{position:static;width:auto;display:grid;grid-template-columns:40px 1fr;column-gap:12px;align-items:center;padding:12px 14px}
-      .card .ic{grid-row:span 2;margin:0}
-      .c2{margin-left:24px}.c3{margin-left:48px}
       .hero .cta .btn{flex:1 1 100%}
+      .link-art{gap:22px}.card{width:88%;padding:12px 14px}
+      .card+.card::before{top:-22px;height:22px}
       .blob{transform:scale(.45);transform-origin:top right;opacity:.6}
     }
   </style>
