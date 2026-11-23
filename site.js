@@ -6,12 +6,12 @@
     en: {
       'nav.partners': 'Businesses', 'nav.guides': 'Guides', 'nav.faq': 'FAQ', 'nav.dl': 'Get the app', 'nav.app': 'Sign in',
       'c.t': 'Shall we talk?', 'c.p': 'Restaurant, shop, guide or agency in Rio: the Kombrio team answers you.', 'c.wa': 'Message us on WhatsApp',
-      'ft.priv': 'Privacy policy (soon)', 'ft.terms': 'Terms of use (soon)', 'ft.city': '© 2026 Kombrio · Rio de Janeiro'
+      'ft.priv': 'Privacy policy', 'ft.terms': 'Terms of use (soon)', 'ft.city': '© 2026 Kombrio · Rio de Janeiro'
     },
     fr: {
       'nav.partners': 'Établissements', 'nav.guides': 'Guides', 'nav.faq': 'FAQ', 'nav.dl': 'Installer l’app', 'nav.app': 'Connexion',
       'c.t': 'On en parle ?', 'c.p': 'Restaurant, boutique, guide ou agence à Rio : l’équipe Kombrio vous répond.', 'c.wa': 'Écrire sur WhatsApp',
-      'ft.priv': 'Politique de confidentialité (bientôt)', 'ft.terms': 'Conditions d’utilisation (bientôt)', 'ft.city': '© 2026 Kombrio · Rio de Janeiro'
+      'ft.priv': 'Politique de confidentialité', 'ft.terms': 'Conditions d’utilisation (bientôt)', 'ft.city': '© 2026 Kombrio · Rio de Janeiro'
     }
   };
   var WA_MSG = { pt: 'Olá! Quero saber mais sobre a Kombrio.', en: 'Hello! I would like to know more about Kombrio.', fr: 'Bonjour ! J’aimerais en savoir plus sur Kombrio.' };

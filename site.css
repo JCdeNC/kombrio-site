@@ -192,3 +192,5 @@ footer .links a,footer .links span{display:inline-block;margin:0 14px 6px 0;max-
 .langsw .langsw-l{margin:0 5px 0 6px}
 .langsw select{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:16px;-webkit-appearance:none;appearance:none;border:0}
 .langsw:focus-within{box-shadow:0 0 0 2px var(--brand)}
+/* pied de page : contact (23/11) */
+.ft-contact a,.ft-contact span{display:inline-block;margin:0 14px 6px 0}
