@@ -1,0 +1,188 @@
+/* Kombrio · site public (v2, 23/11/2026) — style iOS sobre de l'app v133.
+   Compatibilité : iOS 13.4 / Chrome 80 → pas de « gap » sur flex (marges), pas de :has(), pas d'aspect-ratio. */
+:root{
+  --ink:#102C38;--muted:#5B6F78;--line:#D9E6E9;--bg:#F2F4F5;--surface:#fff;
+  --brand:#007F65;--brand-light:#00A887;--brand-soft:#E8F3EF;--accent:#F6B73C;--accent-soft:#FDF1DB;--link:#2761BA;--info-bg:#E6EEFA;
+  --sys:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --disp:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --logo:"Plus Jakarta Sans",var(--disp);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--sys);color:var(--ink);background:var(--bg);line-height:1.5;font-size:17px}
+a{color:var(--link)}
+h1,h2,h3{font-family:var(--disp);margin:0 0 .4em;line-height:1.12;letter-spacing:-.02em}
+h1{font-size:clamp(2.1rem,5.2vw,3.5rem);font-weight:800}
+h2{font-size:clamp(1.65rem,3.4vw,2.35rem);font-weight:800}
+h3{font-size:1.08rem;font-weight:700;letter-spacing:-.01em}
+p{margin:0 0 1em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* en-tête */
+.top{position:-webkit-sticky;position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);-webkit-backdrop-filter:saturate(180%) blur(16px);backdrop-filter:saturate(180%) blur(16px);border-bottom:.5px solid rgba(16,44,56,.14)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;text-decoration:none;color:var(--ink);font:800 1.4rem var(--logo);letter-spacing:-.03em}
+.logo img{width:32px;height:32px;margin-right:9px}
+.logo i{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin:-14px 0 0 1px}
+.nav{display:flex;align-items:center}
+.nav>*{margin-left:6px}
+.nav a.lk{color:var(--ink);text-decoration:none;font-weight:500;padding:8px 10px;border-radius:10px;font-size:.95rem}
+.nav a.lk:hover{background:var(--bg)}
+.nav a.lk.on{color:var(--brand);font-weight:600}
+.seg{display:inline-flex;background:#E4E8EA;border-radius:9px;padding:2px}
+.seg button{border:0;background:transparent;font:600 .78rem var(--sys);color:var(--muted);padding:6px 9px;border-radius:7px;cursor:pointer;min-height:30px}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(16,44,56,.14)}
+
+/* boutons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 22px;border-radius:12px;font:600 1.02rem var(--sys);text-decoration:none;cursor:pointer;border:0;text-align:center;-webkit-tap-highlight-color:transparent}
+.btn:active{opacity:.85}
+.btn.pri{background:var(--brand);color:#fff}
+.btn.yel{background:var(--accent);color:var(--ink)}
+.btn.soft{background:var(--brand-soft);color:var(--brand)}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
+.btn.sm{min-height:36px;padding:7px 14px;font-size:.9rem;border-radius:10px}
+.btns{display:flex;flex-wrap:wrap;margin:-6px}
+.btns>*{margin:6px}
+
+/* bandeau principal */
+.hero{background:var(--ink);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;grid-gap:48px;align-items:center;padding-top:64px;padding-bottom:72px}
+.hero h1{color:#fff}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{font-size:1.2rem;color:#CFE3E0;max-width:32em;margin-bottom:26px}
+.pill{display:inline-block;background:rgba(0,168,135,.2);color:#8FE8D2;font-weight:600;font-size:.85rem;padding:5px 12px;border-radius:999px;margin-bottom:16px}
+.ticks{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;color:#9DBFC0;font-size:.92rem}
+.ticks li{margin:0 18px 6px 0}
+.ticks li::before{content:"✓";color:var(--brand-light);font-weight:700;margin-right:6px}
+
+/* téléphone illustratif */
+.phone{width:270px;margin:0 auto;background:#0b1f28;border-radius:42px;padding:11px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.screen{background:var(--bg);border-radius:32px;overflow:hidden;color:var(--ink);font-size:13px}
+.scr-top{background:#fff;padding:14px 16px 10px;border-bottom:.5px solid var(--line)}
+.scr-top b{font:800 1.35rem var(--disp);letter-spacing:-.02em}
+.scr-top small{display:block;color:var(--muted)}
+.scr-body{padding:14px}
+.qr-frame{background:#1c2b31;border-radius:16px;height:150px;position:relative;margin-bottom:12px}
+.qr-frame span{position:absolute;width:34px;height:34px;border:3px solid var(--accent)}
+.qr-frame .a{top:22px;left:58px;border-right:0;border-bottom:0;border-radius:8px 0 0 0}
+.qr-frame .b{top:22px;right:58px;border-left:0;border-bottom:0;border-radius:0 8px 0 0}
+.qr-frame .c{bottom:22px;left:58px;border-right:0;border-top:0;border-radius:0 0 0 8px}
+.qr-frame .d{bottom:22px;right:58px;border-left:0;border-top:0;border-radius:0 0 8px 0}
+.ok-card{background:#fff;border-radius:14px;padding:12px;display:flex;align-items:center}
+.ok-card .ck{flex:none;width:34px;height:34px;border-radius:50%;background:#DDF3EC;color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:800;margin-right:10px}
+.ok-card b{display:block;font-size:.95rem}
+.ok-card small{color:var(--muted)}
+.scr-btn{margin-top:12px;background:var(--brand);color:#fff;border-radius:12px;text-align:center;padding:11px;font-weight:600}
+
+/* sections */
+.sec{padding:76px 0}
+.sec.white{background:#fff}
+.kick{color:var(--brand);font-weight:700;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.intro{color:var(--muted);font-size:1.1rem;max-width:38em;margin-bottom:32px}
+
+/* liste groupée iOS (étapes) */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);grid-gap:16px}
+.step{background:#fff;border-radius:16px;padding:22px;box-shadow:0 1px 2px rgba(16,44,56,.05)}
+.sec.white .step,.sec.white .tile{background:var(--bg);box-shadow:none}
+.step .n{width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;font:700 1rem var(--disp);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.step p,.tile p{margin:0;color:var(--muted)}
+
+/* tuiles d'avantages */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);grid-gap:16px}
+.tile{background:#fff;border-radius:16px;padding:22px;box-shadow:0 1px 2px rgba(16,44,56,.05)}
+.tile .ic{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:var(--brand-soft);color:var(--brand)}
+.tile .ic.y{background:var(--accent-soft);color:#8a5a00}
+.tile .ic.b{background:var(--info-bg);color:var(--link)}
+
+/* encarts */
+.band{background:var(--brand-soft);border-radius:22px;padding:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.band>div{margin:8px 24px 8px 0;max-width:36em}
+.band h2{font-size:clamp(1.4rem,2.6vw,1.9rem);margin-bottom:.3em}
+.band p{margin:0;color:var(--muted)}
+.band.dark{background:var(--ink);color:#fff}
+.band.dark p{color:#CFE3E0}
+.band.dark h2{color:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;grid-gap:16px}
+
+/* FAQ */
+.faq-tabs{display:flex;background:#E4E8EA;border-radius:11px;padding:3px;max-width:640px;margin-bottom:22px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.faq-tabs button{flex:1 0 auto;border:0;background:transparent;font:600 .92rem var(--sys);color:var(--muted);padding:9px 14px;border-radius:9px;cursor:pointer;min-height:40px;white-space:nowrap}
+.faq-tabs button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(16,44,56,.14)}
+.faq{max-width:780px}
+.group{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(16,44,56,.05)}
+.sec.white .group{background:var(--bg);box-shadow:none}
+.group details{border-top:.5px solid var(--line)}
+.group details:first-child{border-top:0}
+.group summary{cursor:pointer;font-weight:600;padding:16px 20px;list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:52px}
+.group summary::-webkit-details-marker{display:none}
+.group summary::after{content:"";flex:none;width:9px;height:9px;border-right:2px solid #9AA9AF;border-bottom:2px solid #9AA9AF;transform:rotate(45deg);margin:-4px 4px 0 16px;transition:transform .2s}
+.group details[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+.group details p{margin:0;padding:0 20px 18px;color:var(--muted)}
+.more{display:inline-block;margin-top:18px;font-weight:600;color:var(--brand);text-decoration:none}
+.aud-h{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 8px 20px}
+
+/* contact et pied */
+.contact .band>div:last-child{margin-right:0}
+.mail{display:block;margin-top:10px;font-size:.95rem}
+footer{background:var(--ink);color:#9DBFC0;padding:34px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;align-items:center}
+footer .wrap>*{margin:6px 0}
+footer a{color:#CFE3E0;text-decoration:none}
+footer .logo{color:#fff;font-size:1.15rem}
+footer .logo img{width:26px;height:26px}
+footer .links a,footer .links span{display:inline-block;margin:0 14px 6px 0;max-width:100%}
+.soon{opacity:.7}
+
+/* barre d'onglets (téléphone) */
+.tabbar{display:none}
+
+@media(max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;padding-top:44px;padding-bottom:52px}
+  .hero .art{display:none}
+  .steps,.tiles{grid-template-columns:1fr 1fr}
+  .steps .step:last-child{grid-column:1/-1}
+  .sec{padding:56px 0}
+}
+@media(max-width:760px){
+  .nav a.lk{display:none}
+  body{padding-bottom:calc(58px + env(safe-area-inset-bottom))}
+  .tabbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(255,255,255,.92);-webkit-backdrop-filter:saturate(180%) blur(16px);backdrop-filter:saturate(180%) blur(16px);border-top:.5px solid rgba(16,44,56,.16);padding-bottom:env(safe-area-inset-bottom)}
+  .tabbar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:58px;color:#8A999F;text-decoration:none;font-size:.68rem;font-weight:600;-webkit-tap-highlight-color:transparent}
+  .tabbar a svg{margin-bottom:3px}
+  .tabbar a.on{color:var(--brand)}
+  .two{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .logo{font-size:1.25rem}.logo img{width:28px;height:28px;margin-right:7px}
+  .nav>*{margin-left:5px}
+  .seg button{padding:6px 7px}
+  .hero .lead{font-size:1.08rem}
+  .hero .btns .btn{flex:1 1 100%}
+  .steps,.tiles{grid-template-columns:1fr}
+  .steps .step:last-child{grid-column:auto}
+  .step,.tile{padding:18px}
+  .tile{display:grid;grid-template-columns:42px 1fr;grid-column-gap:14px;align-items:start}
+  .tile .ic{grid-row:span 2;margin:0}
+  .tile h3{margin:0 0 2px;align-self:end}
+  .band{padding:22px}
+  .band>div{margin-right:0}
+  .band .btns,.band .btns .btn{width:100%}
+  .band .btns .btn{flex:1 1 100%}
+  .group summary{padding:14px 16px}
+  .group details p{padding:0 16px 16px}
+  footer .wrap{display:block}
+}
+@media(max-width:370px){
+  .logo{font-size:1.1rem}.logo img{width:24px;height:24px;margin-right:6px}
+  .btn.sm{padding:6px 9px;font-size:.8rem}
+  .seg button{padding:5px 6px;font-size:.72rem}
+}
+.btn.sm{white-space:nowrap}
+@media(max-width:560px){
+  .faq-tabs{display:grid;grid-template-columns:1fr 1fr;grid-gap:3px;overflow:visible}
+  .faq-tabs button{padding:8px 6px}
+}
+.nav a.lk{white-space:nowrap}
+@media(max-width:960px){.nav a.lk[href="baixar.html"]{display:none}}
