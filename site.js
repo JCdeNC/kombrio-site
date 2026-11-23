@@ -37,24 +37,37 @@
       if (el.hasAttribute('data-html')) el.innerHTML = v; else el.textContent = v;
     }
     document.documentElement.lang = l === 'pt' ? 'pt-BR' : l;
-    var bs = document.querySelectorAll('.seg button');
-    for (var j = 0; j < bs.length; j++) bs[j].className = bs[j].getAttribute('data-l') === l ? 'on' : '';
+    var sels = document.querySelectorAll('.langsw select'), lbls = document.querySelectorAll('.langsw-l');
+    for (var j = 0; j < sels.length; j++) sels[j].value = l;
+    for (var k = 0; k < lbls.length; k++) lbls[k].textContent = l.toUpperCase();
     var was = document.querySelectorAll('[data-wa]');
     for (var w = 0; w < was.length; w++) was[w].href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(WA_MSG[l]);
-    try { localStorage.setItem('kombrio-site-lang', l); } catch (e) { /* stockage indisponible */ }
     if (typeof window.onLang === 'function') window.onLang(l);
   }
-  var segs = document.querySelectorAll('.seg button');
-  for (var s = 0; s < segs.length; s++) segs[s].onclick = function () { setLang(this.getAttribute('data-l')); };
+  // Choix manuel : mémorisé (clé « -choix », l'ancienne clé était posée d'office et bloquait la détection).
+  var KEY = 'kombrio-site-lang-choix';
+  var sels0 = document.querySelectorAll('.langsw select');
+  for (var s = 0; s < sels0.length; s++) sels0[s].onchange = function () {
+    try { localStorage.setItem(KEY, this.value); } catch (e) { /* stockage indisponible */ }
+    setLang(this.value);
+  };
 
+  // Langue de départ : ?lang= dans le lien, sinon le choix manuel, sinon la langue de l'appareil.
+  function deviceLang() {
+    var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'pt'];
+    for (var i = 0; i < list.length; i++) {
+      var n = String(list[i]).slice(0, 2).toLowerCase();
+      if (n === 'pt' || n === 'es') return 'pt';
+      if (n === 'fr') return 'fr';
+      if (n === 'en') return 'en';
+    }
+    return 'en';
+  }
   var start = '';
   var q = /[?&]lang=(pt|en|fr)/.exec(location.search);
   if (q) start = q[1];
-  if (!start) { try { start = localStorage.getItem('kombrio-site-lang') || ''; } catch (e) { start = ''; } }
-  if (!start) {
-    var n = (navigator.language || 'pt').slice(0, 2).toLowerCase();
-    start = n === 'pt' || n === 'es' ? 'pt' : (n === 'fr' ? 'fr' : 'en');
-  }
+  if (!start) { try { start = localStorage.getItem(KEY) || ''; } catch (e) { start = ''; } }
+  if (!start) start = deviceLang();
   setLang(start);
 
   /* Onglets de la FAQ (faq.html) : #estabelecimentos, #guias, #agencias, #turistas */

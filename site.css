@@ -186,3 +186,9 @@ footer .links a,footer .links span{display:inline-block;margin:0 14px 6px 0;max-
 }
 .nav a.lk{white-space:nowrap}
 @media(max-width:960px){.nav a.lk[href="baixar.html"]{display:none}}
+/* sélecteur de langue unique (23/11) : un bouton, la liste native du téléphone */
+.langsw{position:relative;display:inline-flex;align-items:center;height:34px;padding:0 10px;border-radius:9px;background:#E4E8EA;color:var(--ink);font:600 .82rem var(--sys);cursor:pointer;white-space:nowrap}
+.langsw svg{flex:none;color:var(--muted)}
+.langsw .langsw-l{margin:0 5px 0 6px}
+.langsw select{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:16px;-webkit-appearance:none;appearance:none;border:0}
+.langsw:focus-within{box-shadow:0 0 0 2px var(--brand)}
